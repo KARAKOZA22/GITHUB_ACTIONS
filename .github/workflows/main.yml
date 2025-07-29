@@ -1,7 +1,7 @@
 name: First Worflow
 
 
-on: # When the workflow will be triggere
+on: # When the workflow will be triggered
   push:
     branches:
       - main
