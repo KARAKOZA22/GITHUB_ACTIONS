@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+      - "release/**"
+      # the previous line will run all children of release folder
+    paths:
+      - "src/**"
+
+  pull_request:
+      branches:
+        - main
+        - "release/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.2.2
+
+      - name: Run tests
+        uses: npm test 
+        
