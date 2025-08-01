@@ -3,7 +3,7 @@ on:
     branches:
       - main
       - "release/**"
-      # the previous line will run all children of release folder
+
     paths:
       - "src/**"
 
@@ -18,6 +18,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Run tests
         uses: npm test 
